@@ -15,7 +15,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: calc-backend
+        working-directory: calculadora-frontend-backend-demo-com-testes/calc-backend
 
     steps:
       - name: Checkout do código
