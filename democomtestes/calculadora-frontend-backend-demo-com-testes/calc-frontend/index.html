@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calculadora (Frontend + Backend)</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Calculadora com Backend (ExpressJS)</h1>
+    <p class="subtitle">Os cálculos são feitos no servidor (API Node+Express) e o resultado retorna ao frontend.</p>
+
+    <form id="calc-form">
+      <div class="row">
+        <label for="a">A:</label>
+        <input id="a" name="a" type="number" step="any" required placeholder="Ex.: 10" />
+      </div>
+      <div class="row">
+        <label for="op">Operação:</label>
+        <select id="op" name="op">
+          <option value="add">Somar (+)</option>
+          <option value="sub">Subtrair (−)</option>
+          <option value="mul">Multiplicar (×)</option>
+          <option value="div">Dividir (÷)</option>
+          <option value="pow">Potência (^)</option>
+        </select>
+      </div>
+      <div class="row">
+        <label for="b">B:</label>
+        <input id="b" name="b" type="number" step="any" required placeholder="Ex.: 5" />
+      </div>
+      <div class="actions">
+        <button type="submit">Calcular</button>
+        <button type="button" id="clear">Limpar</button>
+      </div>
+    </form>
+
+    <div id="result" class="card hidden">
+      <h2>Resultado</h2>
+      <div class="result-line">
+        <span id="expression">—</span>
+        <span class="equals">=</span>
+        <strong id="value">—</strong>
+      </div>
+      <p id="error" class="error"></p>
+    </div>
+
+    <details class="advanced">
+      <summary>Configurações avançadas</summary>
+      <label for="api-base">URL do backend:</label>
+      <input id="api-base" type="text" value="http://localhost:3000" />
+      <button id="ping">Testar conexão (healthcheck)</button>
+      <p id="health-out"></p>
+    </details>
+
+    <footer>
+      <small>Demo educacional • HTML/CSS/JS + ExpressJS • © 2025</small>
+    </footer>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
